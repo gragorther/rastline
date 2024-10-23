@@ -1,3 +1,71 @@
+<script lang="ts">
+	import Kartica from '$lib/kartica.svelte';
+	import type { Opis } from '$lib/types';
+	const opisi: Opis[] = [
+		{
+			name: 'Jabolko',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Golden_delicious_apple.jpg/640px-Golden_delicious_apple.jpg',
+			description:
+				'Jabolko [jábou̯ko] je sadež, ki raste na drevesu jablani. Spada med kulturne rastline, ki jih je vzgojil človek s pomočjo križanja. Korenine jabolka izvirajo iz Azije. V Evropo je verjetno prispelo s trgovci. Obstaja več kot 7500 kultivarjev jabolk. Jabolko zraste iz pet-listnega cveta.'
+		},
+		{
+			name: 'Hruška',
+			image: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Pears.jpg',
+			description:
+				'Hruška (znanstveno ime Pyrus communis) je do 16 m visoko drevo s pokončnimi vejami. Deblo doseže do 60 cm premera, lubje ima sivkasto-rjave barve, skorja je razpokana, številne vejice - mladike imajo na koncu trnate zaključke. Listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi. Hruška spada v skupino pečkatih sadežev.'
+		},
+		{
+			name: 'Kivi',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Kiwifruit_cross_section.jpg/600px-Kiwifruit_cross_section.jpg',
+			description:
+				'Kivi (znanstveno ime Actinidia deliciosa) je do 10 m visoko drevo s pokončnimi vejami. Deblo doseže do 40 cm premera, lubje ima sivkasto-rjave barve, skorja je gladka, listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi.'
+		},
+		{
+			name: 'Banana',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Bananas.jpg/640px-Bananas.jpg',
+			description:
+				'Banana (znanstveno ime Musa acuminata) je do 10 m visoko drevo s pokončnimi vejami. Deblo doseže do 40 cm premera, lubje ima sivkasto-rjave barve, skorja je gladka, listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi.'
+		},
+		{
+			name: '3',
+			image: 'https://i.pinimg.com/564x/a7/ff/a5/a7ffa5b022d9adde308bf924585075fa.jpg',
+			description:
+				'Število 3 je zelo zanimivo število, ki se pogosto pojavlja v matematiki, fiziki in filozofiji. V mnogih kulturah je tudi simbolno pomembno, saj predstavlja tridelnost, kot so tri dimenzije prostora, tri časa (preteklost, sedanjost, prihodnost) in tri aspekte človeka (telesnost, duhovnost, duševnost).'
+		},
+		{
+			name: 'Mandarina',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Citrus_reticulata_April_2013_Nordbaden.JPG/540px-Citrus_reticulata_April_2013_Nordbaden.JPG',
+			description:
+				'Mandarina (znanstveno ime Citrus reticulata) je do 10 m visoko drevo s pokončnimi vejami. Deblo doseže do 40 cm premera, lubje ima sivkasto-rjave barve, skorja je gladka, listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi.'
+		},
+		{
+			name: 'Limona',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/P1030323.JPG/640px-P1030323.JPG',
+			description:
+				'Limona (znanstveno ime Citrus limon) je do 10 m visoko drevo s pokončnimi vejami. Deblo doseže do 40 cm premera, lubje ima sivkasto-rjave barve, skorja je gladka, listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi.'
+		},
+		{
+			name: 'Gorčica',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Senf-Variationen_edit.jpg/639px-Senf-Variationen_edit.jpg',
+			description:
+				'Gorčica (znanstveno ime Capsicum annuum) je do 1 m visoka rastlina s pokončnimi vejami. Deblo doseže do 10 cm premera, lubje ima sivkasto-rjave barve, skorja je gladka, listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi.'
+		},
+		{
+			name: 'Krompir',
+			image:
+				'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Potato_and_cross_section.jpg/640px-Potato_and_cross_section.jpg',
+			description:
+				'Krompir (znanstveno ime Solanum tuberosum) je do 1 m visoka rastlina s pokončnimi vejami. Deblo doseže do 10 cm premera, lubje ima sivkasto-rjave barve, skorja je gladka, listi so zgoraj gladki, temnozeleni, spodaj pa bledi, fino dlakavi.'
+		}
+	];
+</script>
+
 <h1 class="text-5xl">Rastline</h1>
 <p>
 	Rastlíne (znanstveno ime Plantae) so eno izmed kraljestev živih bitij, v katerega uvrščamo
@@ -10,41 +78,8 @@
 	alge, glive in druge nesorodne avtotrofne organizme, to tradicijo botanika do neke mere ohranja še
 	danes. Skupnosti vseh rastlin na določenem območju v določenem času pravimo flora.
 </p>
-<div class="grid grid-cols-2 font-black text-2xl p-5 rounded-2xl">
-	<div
-		class="flex space-y-5 flex-col items-center font-black p-5 shadow-xl border-red-300 border-2 rounded-md bg-green-700 m-12 shadow-4xl"
-	>
-		<h1 class="text-4xl">Banana</h1>
-		<p class="text-sm">
-			Banana je užiten sadež, plod različnih vrst zelnatih rastlin iz roda Musa[1] in je lahko
-			različnih barv, velikosti in trdnosti. Botanično je jagoda.[2][3] Običajno je podolgovata in
-			ukrivljena, z mehkim škrobnatim mesom, pokritim z zelenim, rumenim, rdečim ali vijoličnim
-			olupkom, ki ob zrelosti porjavi. Sadeži v šopih visijo z drevesa. Skoraj vse moderne jedilne
-			partenokarpne (brez semen) banane izhajajo iz dveh divjih vrst – Musa acuminata in Musa
-			balbisiana. Banane so po pridelani količini na četrtem mestu, za pšenico, rižem in mlekom. Na
-			zahodnem tržišču so skoraj izključno sorte Cavendish. Ogroža jih glivična panamska bolezen.[4]
-			Edina članica Evropske unije, ki ima plantaže bananovcev, je Španija (Kanarski otoki).
-		</p>
-		<img src="Bananavarieties.jpg" class="rounded-br-lg" alt="banana varieties" />
-		<a
-			href="https://sl.wikipedia.org/wiki/Banana"
-			class="bg-yellow-400 text-white rounded-3xl hover:bg-yellow-800 px-20 shadow-xl">Več o tem</a
-		>
-	</div>
-	<div
-		class="flex flex-col space-y-5 items-center font-black p-5 shadow-xl border-red-300 border-2 rounded-md bg-green-700 m-12 shadow-4xl"
-	>
-		<h1 class="text-4xl">Jabolko</h1>
-		<p class="text-sm">
-			Jabolko [jábou̯ko] je sadež, ki raste na drevesu jablani. Spada med kulturne rastline, ki jih
-			je vzgojil človek s pomočjo križanja. Korenine jabolka izvirajo iz Azije. V Evropo je verjetno
-			prispelo s trgovci. Obstaja več kot 7500 kultivarjev jabolk. Jabolko zraste iz pet-listnega
-			cveta.
-		</p>
-		<img src="jabolko.jpg" alt="An apple" class="rounded-br-lg size-64" />
-		<a
-			href="https://sl.wikipedia.org/wiki/Jabolko"
-			class="bg-yellow-400 text-white rounded-3xl hover:bg-yellow-800 px-20 shadow-xl">Več o tem</a
-		>
-	</div>
+<div class="grid grid-cols-3 font-black text-2xl p-5 rounded-2xl">
+	{#each opisi as opis}
+		<Kartica {opis}></Kartica>
+	{/each}
 </div>
